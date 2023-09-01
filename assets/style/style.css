@@ -6,3 +6,18 @@ body {
     background-position: center;
     background-size: cover;
 }
+
+.quoteStyling {
+    height: 1ch;
+}
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.show:hover+.hide {
+    visibility: visible;
+    opacity: 1;
+    transition: ease 1s;
+}
