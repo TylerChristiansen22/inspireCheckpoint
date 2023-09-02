@@ -15,6 +15,8 @@ class ObservableAppState extends EventEmitter {
   /** @type {Weather} */
   weather = null
 
+  isFahrenheit = true
+
 
 
   page = ''

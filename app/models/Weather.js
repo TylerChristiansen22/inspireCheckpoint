@@ -2,15 +2,26 @@
 
 export class Weather {
     constructor(data) {
-        this.temp = (data.main.temp - 273.15) * (9 / 5) + 32
+        this.fahrenheit = (data.main.temp - 273.15) * (9 / 5) + 32
+        this.celsius = (data.main.temp - 273.15)
         this.icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
     }
 
     get WeatherTemplate() {
         return `
-        ${Math.floor(this.temp)} degrees Fahrenheit
+        ${Math.floor(this.fahrenheit)} degrees Fahrenheit
         <br>
         <img src="${this.icon}" alt="Bad Image"/>
+        <button onclick="app.WeatherController.toggle()">Switch Type</button>
+        `
+    }
+
+    get WeatherTemplate2() {
+        return `
+        ${Math.floor(this.celsius)} degrees Celsius
+        <br>
+        <img src="${this.icon}" alt="Bad Image"/>
+        <button onclick="app.WeatherController.toggle()">Switch Type</button>
         `
     }
 }

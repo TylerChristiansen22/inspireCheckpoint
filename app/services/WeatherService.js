@@ -12,7 +12,10 @@ class WeatherService {
         AppState.weather = new Weather(response.data)
         console.log(AppState.weather)
     }
-
+    toggle() {
+        AppState.isFahrenheit = !AppState.isFahrenheit
+        AppState.emit('isFahrenheit')
+    }
 }
 
 
