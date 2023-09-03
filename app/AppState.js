@@ -19,8 +19,6 @@ class ObservableAppState extends EventEmitter {
   isFahrenheit = true
   /** @type {ToDo[]} */
   ToDoList = []
-  /** @type {ToDo|null} */
-  ToDoForm = null
 
 
 

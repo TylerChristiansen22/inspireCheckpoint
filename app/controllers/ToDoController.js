@@ -10,9 +10,10 @@ function _drawTodo() {
     setHTML('ToDoList', template)
 }
 
-function _drawTodoForm() {
-    let form = AppState.ToDoForm
-    setHTML('ToDoListForm', form.ToDoForm)
+function _drawTasksToDo() {
+    let template = ''
+    AppState.ToDoList.find(todo => template += todo.numberToDo)
+    setHTML('tasksLeft', template)
 
 }
 
@@ -20,7 +21,7 @@ export class ToDoController {
     constructor() {
         AppState.on('account', this.getTodoList)
         AppState.on('ToDoList', _drawTodo)
-        AppState.on('account', _drawTodoForm)
+        AppState.on('ToDoList', _drawTasksToDo)
     }
 
     async getTodoList() {
@@ -31,14 +32,33 @@ export class ToDoController {
         }
     }
 
-    async createToDo(id) {
+    async createToDo() {
         try {
             window.event.preventDefault()
             const form = window.event.target
             const formData = getFormData(form)
-            await toDoService.createToDo(formData, id)
+            await toDoService.createToDo(formData)
             // @ts-ignore
             form.reset()
+        } catch (error) {
+            Pop.error(error)
+        }
+    }
+
+    async checkItem(id) {
+        try {
+            await toDoService.checkItem(id)
+        } catch (error) {
+            Pop.error(error)
+        }
+    }
+
+    async deleteItem(id) {
+        try {
+            if (await Pop.confirm('Are you sure you want to remove this item from the list???')) {
+                toDoService.deleteItem(id)
+            }
+
         } catch (error) {
             Pop.error(error)
         }

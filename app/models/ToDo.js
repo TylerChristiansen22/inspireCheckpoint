@@ -1,28 +1,42 @@
-export class ToDo {
-    constructor(data) {
-        this.id = data.id
-        this.completed = data.completed
-        this.creatorId = data.creatorId
-        this.description = data.description
-    }
+import { AppState } from "../AppState.js"
 
-    get ToDoList() {
-        return `
+export class ToDo {
+  constructor(data) {
+    this.id = data.id
+    this.completed = data.completed
+    this.creatorId = data.creatorId
+    this.description = data.description
+  }
+
+  get ToDoList() {
+    return `
+      <div class="d-flex">
+        ${this.Checkbox}
         <span class="bg-light ms-2">${this.description}</span>
+        ${this.deleteButton}
+        <br>
+      </div>
         `
+  }
+  get Checkbox() {
+    if (this.completed) {
+      return `<input type="checkbox" class="ms-2" checked onchange="app.ToDoController.checkItem('${this.id}')">`
+    } else {
+      return `<input type="checkbox" class="ms-2" onchange="app.ToDoController.checkItem('${this.id}')">`
     }
-    get ToDoForm() {
-        return `
-        <form onsubmit="app.ToDoController.createToDo(${this.id})">
-        <div class="form-floating ms-2 col-2">
-          <input required type="text" minLength="3" maxLength="20" class="form-control" id="ToDoName" name="Name"
-            placeholder="ToDo Name">
-          <label for="Name">What's on the list?</label>
-        </div>
-        <div>
-          <button type="submit" class="ms-2 btn btn-info">Create ToDo</button>
-        </div>
-      </form>
-        `
+  }
+  get deleteButton() {
+    return `
+    <button class="btn btn-danger" onclick="app.ToDoController.deleteItem('${this.id}')" > 🗑️</button>
+    `
+  }
+  get numberToDo() {
+    let leftToDo = 0
+    let totalTasks = AppState.ToDoList.length
+    let notCompleted = AppState.ToDoList.filter(item => item.completed)
+    if (notCompleted.length >= leftToDo) {
+      leftToDo += notCompleted.length
+      return `<span class="bg-light ms-2">${leftToDo}/${totalTasks} Completed</span>`
     }
+  }
 }
