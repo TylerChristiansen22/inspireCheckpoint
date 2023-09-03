@@ -82,7 +82,23 @@
       <span id="weather" class="bg-light position-absolute top-100">Weather</span>
     </div>
     <div>
-      <span id="todo" class="bg-light">ToDo List</span>
+      <button class="ms-2 btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ToDoListForm"
+        aria-expanded="false">Make ToDo</button>
+    </div>
+    <div class="collapse" id="ToDoListForm">
+      <!-- <form onsubmit="app.ToDoController.createToDo(${this.id})">
+        <div class="form-floating ms-2 col-2">
+          <input required type="text" minLength="3" maxLength="20" class="form-control" id="ToDoName" name="Name"
+            placeholder="ToDo Name">
+          <label for="Name">What's on the list?</label>
+        </div>
+        <div>
+          <button type="submit" class="ms-2 btn btn-info">Create ToDo</button>
+        </div>
+      </form> -->
+    </div>
+    <div id="ToDoList">
+
     </div>
 
 

@@ -1,5 +1,6 @@
 import { Img } from './models/Img.js'
 import { Quote } from './models/Quote.js'
+import { ToDo } from './models/ToDo.js'
 import { Value } from './models/Value.js'
 import { Weather } from './models/Weather.js'
 import { EventEmitter } from './utils/EventEmitter.js'
@@ -16,6 +17,10 @@ class ObservableAppState extends EventEmitter {
   weather = null
 
   isFahrenheit = true
+  /** @type {ToDo[]} */
+  ToDoList = []
+  /** @type {ToDo|null} */
+  ToDoForm = null
 
 
 
