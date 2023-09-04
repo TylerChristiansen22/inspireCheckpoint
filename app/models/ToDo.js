@@ -27,7 +27,7 @@ export class ToDo {
   }
   get deleteButton() {
     return `
-    <button class="btn btn-danger" onclick="app.ToDoController.deleteItem('${this.id}')" > 🗑️</button>
+    <button class="btn btn-danger opaque" onclick="app.ToDoController.deleteItem('${this.id}')" > 🗑️</button>
     `
   }
   get numberToDo() {

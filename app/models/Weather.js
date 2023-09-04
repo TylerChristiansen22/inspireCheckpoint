@@ -10,7 +10,7 @@ export class Weather {
     get WeatherTemplate() {
         return `
         <div class="glass rounded">
-        ${Math.floor(this.fahrenheit)} degrees Fahrenheit
+        ${Math.floor(this.fahrenheit)}° Fahrenheit
         <br>
         <img src="${this.icon}" alt="Bad Image"/>
         <button class="glass rounded" onclick="app.WeatherController.toggle()">Switch Type</button>
@@ -21,7 +21,7 @@ export class Weather {
     get WeatherTemplate2() {
         return `
         <div class="glass rounded">
-        ${Math.floor(this.celsius)} degrees Celsius
+        ${Math.floor(this.celsius)}° Celsius
         <br>
         <img src="${this.icon}" alt="Bad Image"/>
         <button class="glass rounded" onclick="app.WeatherController.toggle()">Switch Type</button>
