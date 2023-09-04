@@ -40,6 +40,8 @@ export class ToDoController {
             await toDoService.createToDo(formData)
             // @ts-ignore
             form.reset()
+            // @ts-ignore
+            bootstrap.Collapse.getOrCreateInstance('#ToDoListForm').hide()
         } catch (error) {
             Pop.error(error)
         }
