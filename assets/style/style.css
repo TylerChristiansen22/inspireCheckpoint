@@ -21,3 +21,8 @@ body {
     opacity: 1;
     transition: ease 1s;
 }
+
+.glass {
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(30px);
+}

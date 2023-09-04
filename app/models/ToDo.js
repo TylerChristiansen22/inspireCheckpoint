@@ -12,7 +12,7 @@ export class ToDo {
     return `
       <div class="d-flex">
         ${this.Checkbox}
-        <span class="bg-light ms-2">${this.description}</span>
+        <span class="glass rounded ms-2">${this.description}</span>
         ${this.deleteButton}
         <br>
       </div>
@@ -20,9 +20,9 @@ export class ToDo {
   }
   get Checkbox() {
     if (this.completed) {
-      return `<input type="checkbox" class="ms-2" checked onchange="app.ToDoController.checkItem('${this.id}')">`
+      return `<input type="checkbox" class="ms-2 glass rounded" checked onchange="app.ToDoController.checkItem('${this.id}')">`
     } else {
-      return `<input type="checkbox" class="ms-2" onchange="app.ToDoController.checkItem('${this.id}')">`
+      return `<input type="checkbox" class="ms-2 glass rounded" onchange="app.ToDoController.checkItem('${this.id}')">`
     }
   }
   get deleteButton() {
@@ -36,7 +36,7 @@ export class ToDo {
     let notCompleted = AppState.ToDoList.filter(item => item.completed)
     if (notCompleted.length >= leftToDo) {
       leftToDo += notCompleted.length
-      return `<span class="bg-light ms-2">${leftToDo}/${totalTasks} Completed</span>`
+      return `<span class="glass rounded ms-2">${leftToDo}/${totalTasks} Completed</span>`
     }
   }
 }

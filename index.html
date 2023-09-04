@@ -71,29 +71,29 @@
     </div> -->
     <div class="container-fluid">
       <div class="col-0 position-absolute top-50 start-50 translate-middle">
-        <span id="clock" class="bg-light fs-1"></span>
+        <span id="clock" class="glass rounded fs-1"></span>
       </div>
       <div class="col-0 position-absolute start-50 translate-middle mt-5">
-        <span id="quote" class="show bg-light fs-3 quoteStyling"></span>
-        <span id="quoteAuthor" class="hide bg-light fs-6 ms-3"></span>
+        <span id="quote" class="show glass rounded fs-3 quoteStyling"></span>
+        <span id="quoteAuthor" class="hide glass rounded fs-6 ms-3"></span>
       </div>
     </div>
     <div>
-      <span id="weather" class="bg-light position-absolute top-100">Weather</span>
+      <span id="weather" class="glass rounded position-absolute top-100">Weather</span>
     </div>
     <div>
-      <button class="ms-2 btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ToDoListForm"
+      <button class="ms-2 btn glass" type="button" data-bs-toggle="collapse" data-bs-target="#ToDoListForm"
         aria-expanded="false">Make ToDo</button>
     </div>
     <div class="collapse" id="ToDoListForm">
       <form onsubmit="app.ToDoController.createToDo()">
         <div class="form-floating ms-2 col-2">
-          <input required type="text" minLength="3" maxLength="20" class="form-control" id="ToDoName" name="description"
-            placeholder="ToDo Name">
+          <input required type="text" minLength="3" maxLength="20" class="form-control glass rounded" id="ToDoName"
+            name="description" placeholder="ToDo Name">
           <label for="description">What's on the list?</label>
         </div>
         <div>
-          <button type="submit" class="ms-2 btn btn-info">Create ToDo</button>
+          <button type="submit" class="ms-2 btn glass rounded">Create ToDo</button>
         </div>
       </form>
     </div>

@@ -9,19 +9,23 @@ export class Weather {
 
     get WeatherTemplate() {
         return `
+        <div class="glass rounded">
         ${Math.floor(this.fahrenheit)} degrees Fahrenheit
         <br>
         <img src="${this.icon}" alt="Bad Image"/>
-        <button onclick="app.WeatherController.toggle()">Switch Type</button>
+        <button class="glass rounded" onclick="app.WeatherController.toggle()">Switch Type</button>
+        </div>
         `
     }
 
     get WeatherTemplate2() {
         return `
+        <div class="glass rounded">
         ${Math.floor(this.celsius)} degrees Celsius
         <br>
         <img src="${this.icon}" alt="Bad Image"/>
-        <button onclick="app.WeatherController.toggle()">Switch Type</button>
+        <button class="glass rounded" onclick="app.WeatherController.toggle()">Switch Type</button>
+        </div>
         `
     }
 }
